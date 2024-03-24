@@ -1,9 +1,7 @@
 <?php
 
 if (isset($_POST['edit']) || isset($_POST['del'])) $id = $_GET['id'];
-
 require "db_con.php";
-
 
 if (isset($_POST['save']) || isset($_POST['edit']) || isset($_POST['del'])) {
     if (isset($_POST['save']) || isset($_POST['edit'])) {
