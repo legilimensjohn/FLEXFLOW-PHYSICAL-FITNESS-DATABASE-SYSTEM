@@ -1,5 +1,6 @@
 <?php
-if (isset($_GET['id'])) $id = $_GET['id'];
+if (isset($_GET['id']))
+    $id = $_GET['id'];
 require('db_con.php');
 
 $query = "SELECT *,
@@ -11,22 +12,22 @@ $query = "SELECT *,
     WHERE person.id='$id'";
 
 $result = mysqli_query($conn, $query);
-$row = mysqli_fetch_assoc($result);
+$row    = mysqli_fetch_assoc($result);
 
-$firstname = $row['fname'];
-$lastname = $row['lname'];
-$gender = $row['gender'];
-$age = $row['age'];
-$height = $row['height'];
-$weight = $row['weight'];
-$bmi = $row['bmi'];
-$waistline = $row['waistline'];
-$bpm_rest = $row['bpm_rest'];
-$jog_time = $row['jog_time'];
-$situp_reps = $row['situp_reps'];
+$firstname   = $row['fname'];
+$lastname    = $row['lname'];
+$gender      = $row['gender'];
+$age         = $row['age'];
+$height      = $row['height'];
+$weight      = $row['weight'];
+$bmi         = $row['bmi'];
+$waistline   = $row['waistline'];
+$bpm_rest    = $row['bpm_rest'];
+$jog_time    = $row['jog_time'];
+$situp_reps  = $row['situp_reps'];
 $pushup_reps = $row['pushup_reps'];
-$sit_reach = $row['sit_reach'];
-$id = $row['id'];
+$sit_reach   = $row['sit_reach'];
+$id          = $row['id'];
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +39,9 @@ $id = $row['id'];
     <title>FlexFlow</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets\flexflow.css?d=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="assets\flexflow.css?d=<?php
+echo time();
+?>">
     <style>
         body {
             background-image: url('assets/flexflow2.png');
@@ -89,15 +92,29 @@ $id = $row['id'];
     </header>
 
     <form action="read_data.php">
-        <h2><?php echo $firstname ?> <?php echo $lastname ?> Fitness Assesment</h2>
+        <h2><?php
+echo $firstname;
+?> <?php
+echo $lastname;
+?> Fitness Assesment</h2>
         <table class="card ctn yllw">
             <tr>
                 <td class="fit"> Assesment on the physical fitness of
-                    <b><?php echo $firstname ?> <?php echo $lastname ?></b>
-                    <br><br>Age: <b><?php echo $age ?></b><br>Sex:<b>
-                        <?php if ($gender == "M") echo "Male";
-                        else if ($gender == "F") echo "Female" ?>
-                    </b>
+                    <b><?php
+echo $firstname;
+?> <?php
+echo $lastname;
+?></b>
+                    <br><br>Age: <b><?php
+echo $age;
+?></b><br>Sex:<b>
+                        <?php
+if ($gender == "M")
+    echo "Male";
+else if ($gender == "F")
+    echo "Female";
+?>
+                   </b>
                 </td>
                 <td></td>
                 <td class="hglight1">
@@ -107,24 +124,40 @@ $id = $row['id'];
             <tr>
         </table>
         <table class="card ctn">
-            <h3><?php echo $firstname ?> - Body Composition</h3>
+            <h3><?php
+echo $firstname;
+?> - Body Composition</h3>
             <tr>
-                <td class="fit">Height: <b><?php echo $height ?> m</b>
-                    <br>Weight: <b><?php echo $weight ?> kg</b><br>
-                    <br>Waist Circumference: <b><?php echo $waistline ?> cm</b>
+                <td class="fit">Height: <b><?php
+echo $height;
+?> m</b>
+                    <br>Weight: <b><?php
+echo $weight;
+?> kg</b><br>
+                    <br>Waist Circumference: <b><?php
+echo $waistline;
+?> cm</b>
                 </td>
                 <td></td>
-                <td class="hglight2">Body Mass Index: <b><?php echo $bmi ?> kg/m<sup>2</sup></b>
+                <td class="hglight2">Body Mass Index: <b><?php
+echo $bmi;
+?> kg/m<sup>2</sup></b>
                     <br>BMI Class: <b id="bmi"></b>
                     <br><br>Rating: <b id="waistline"></b>
                 </td>
             </tr>
         </table>
         <table class="card ctn">
-            <h3><?php echo $firstname ?> - Aerobic Fitness</h3>
+            <h3><?php
+echo $firstname;
+?> - Aerobic Fitness</h3>
             <tr>
-                <td class="fit">Heart Rate at Rest: <b><?php echo $bpm_rest ?> bpm</b>
-                    <br><br>2.4-km Jog Test: <b><?php echo $jog_time ?> min</b>
+                <td class="fit">Heart Rate at Rest: <b><?php
+echo $bpm_rest;
+?> bpm</b>
+                    <br><br>2.4-km Jog Test: <b><?php
+echo $jog_time;
+?> min</b>
                 </td>
                 <td></td>
                 <td class="hglight2">Rating: <b id="bpm_rest"></b>
@@ -133,11 +166,19 @@ $id = $row['id'];
             </tr>
         </table>
         <table class="card ctn">
-            <h3><?php echo $firstname ?> - Muscular Fitness</h3>
+            <h3><?php
+echo $firstname;
+?> - Muscular Fitness</h3>
             <tr>
-                <td class="fit">Sit-up Repititions: <b><?php echo $situp_reps ?></b>
-                    <br><br>Push-up Repititions: <b><?php echo $pushup_reps ?></b>
-                    <br><br>Sit and Reach: <b><?php echo $sit_reach ?> cm</b>
+                <td class="fit">Sit-up Repititions: <b><?php
+echo $situp_reps;
+?></b>
+                    <br><br>Push-up Repititions: <b><?php
+echo $pushup_reps;
+?></b>
+                    <br><br>Sit and Reach: <b><?php
+echo $sit_reach;
+?> cm</b>
                 </td>
                 <td></td>
                 <td class="hglight2">Rating: <b id="situp_reps"></b>
@@ -156,15 +197,33 @@ $id = $row['id'];
 
     <script src="assets\menu_button.js"></script>
     <script>
-        let bmi = "<?php print($bmi); ?>";
-        let age = "<?php print($age); ?>";
-        let gender = "<?php print($gender); ?>";
-        let waistline = "<?php print($waistline); ?>";
-        let bpm_rest = "<?php print($bpm_rest); ?>";
-        let jog_time = "<?php print($jog_time); ?>";
-        let situp_reps = "<?php print($situp_reps); ?>";
-        let pushup_reps = "<?php print($pushup_reps); ?>";
-        let sit_reach = "<?php print($sit_reach); ?>";
+        let bmi = "<?php
+print($bmi);
+?>";
+        let age = "<?php
+print($age);
+?>";
+        let gender = "<?php
+print($gender);
+?>";
+        let waistline = "<?php
+print($waistline);
+?>";
+        let bpm_rest = "<?php
+print($bpm_rest);
+?>";
+        let jog_time = "<?php
+print($jog_time);
+?>";
+        let situp_reps = "<?php
+print($situp_reps);
+?>";
+        let pushup_reps = "<?php
+print($pushup_reps);
+?>";
+        let sit_reach = "<?php
+print($sit_reach);
+?>";
     </script>
     <script src="assets\review_data.js"></script>
 </body>
