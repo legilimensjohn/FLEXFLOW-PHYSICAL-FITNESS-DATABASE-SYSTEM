@@ -20,7 +20,9 @@ $result = mysqli_query($conn, $query);
     <title>FlexFlow</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets\flexflow.css?d=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="assets\flexflow.css?d=<?php
+echo time();
+?>">
     <style>
         body {
             background-image: url('assets/flexflow3.png');
@@ -75,45 +77,81 @@ $result = mysqli_query($conn, $query);
                             <td>Push-up Reps</td>
                             <td>Sit and Reach (cm)</td>
                         </tr>
-                        <?php while ($row = mysqli_fetch_assoc($result)) {
-                            $firstname = $row['fname'];
-                            $lastname = $row['lname'];
-                            $gender = $row['gender'];
-                            $age = $row['age'];
-                            $height = $row['height'];
-                            $weight = $row['weight'];
-                            $bmi = $row['bmi'];
-                            $waistline = $row['waistline'];
-                            $bpm_rest = $row['bpm_rest'];
-                            $jog_time = $row['jog_time'];
-                            $situp_reps = $row['situp_reps'];
-                            $pushup_reps = $row['pushup_reps'];
-                            $sit_reach = $row['sit_reach'];
-                            $id = $row['id']; ?>
-                            <tr>
+                        <?php
+while ($row = mysqli_fetch_assoc($result)) {
+    $firstname   = $row['fname'];
+    $lastname    = $row['lname'];
+    $gender      = $row['gender'];
+    $age         = $row['age'];
+    $height      = $row['height'];
+    $weight      = $row['weight'];
+    $bmi         = $row['bmi'];
+    $waistline   = $row['waistline'];
+    $bpm_rest    = $row['bpm_rest'];
+    $jog_time    = $row['jog_time'];
+    $situp_reps  = $row['situp_reps'];
+    $pushup_reps = $row['pushup_reps'];
+    $sit_reach   = $row['sit_reach'];
+    $id          = $row['id'];
+?>
+                           <tr>
                                 <td>
                                     <div class="rud">
-                                        <a href="review_data.php?id=<?php echo $id ?>" class="btn btn-pencil">View</a>
-                                        <a href="edit_data.php?id=<?php echo $id ?>" class="btn btn-pencil">Edit</a>
-                                        <a href="delete_data.php?id=<?php echo $id ?> " class="btn btn-danger">Delete</a>
+                                        <a href="review_data.php?id=<?php
+    echo $id;
+?>" class="btn btn-pencil">View</a>
+                                        <a href="edit_data.php?id=<?php
+    echo $id;
+?>" class="btn btn-pencil">Edit</a>
+                                        <a href="delete_data.php?id=<?php
+    echo $id;
+?> " class="btn btn-danger">Delete</a>
                                     </div>
                                 </td>
-                                <td><?php echo $firstname ?></td>
-                                <td><?php echo $lastname ?></td>
-                                <td><?php echo $gender ?></td>
-                                <td><?php echo $age ?></td>
-                                <td><?php echo $height ?></td>
-                                <td><?php echo $weight ?></td>
-                                <td><?php echo $bmi ?></td>
-                                <td><?php echo $waistline ?></td>
-                                <td><?php echo $bpm_rest ?></td>
-                                <td><?php echo $jog_time ?></td>
-                                <td><?php echo $situp_reps ?></td>
-                                <td><?php echo $pushup_reps ?></td>
-                                <td><?php echo $sit_reach ?></td>
+                                <td><?php
+    echo $firstname;
+?></td>
+                                <td><?php
+    echo $lastname;
+?></td>
+                                <td><?php
+    echo $gender;
+?></td>
+                                <td><?php
+    echo $age;
+?></td>
+                                <td><?php
+    echo $height;
+?></td>
+                                <td><?php
+    echo $weight;
+?></td>
+                                <td><?php
+    echo $bmi;
+?></td>
+                                <td><?php
+    echo $waistline;
+?></td>
+                                <td><?php
+    echo $bpm_rest;
+?></td>
+                                <td><?php
+    echo $jog_time;
+?></td>
+                                <td><?php
+    echo $situp_reps;
+?></td>
+                                <td><?php
+    echo $pushup_reps;
+?></td>
+                                <td><?php
+    echo $sit_reach;
+?></td>
                             </tr>
-                        <?php }  ?>
-                    </table>
+                        <?php
+}
+?>
+                   </table>
                 </div>
             </div>
         </div>
