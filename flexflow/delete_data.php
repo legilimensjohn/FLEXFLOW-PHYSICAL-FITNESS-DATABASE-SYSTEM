@@ -7,9 +7,10 @@ $row       = mysqli_fetch_assoc($result);
 $firstname = $row['fname'];
 $lastname  = $row['lname'];
 ?>
+
+
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -86,5 +87,4 @@ echo $lastname;
     </form>
     <script src="assets\menu_button.js"></script>
 </body>
-
 </html>
