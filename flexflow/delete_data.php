@@ -1,11 +1,11 @@
 <?php
 $id = $_GET['id'];
 require('db_con.php');
-$query = "SELECT * FROM `person` WHERE person.id='$id'";
-$result = mysqli_query($conn, $query);
-$row = mysqli_fetch_assoc($result);
+$query     = "SELECT * FROM `person` WHERE person.id='$id'";
+$result    = mysqli_query($conn, $query);
+$row       = mysqli_fetch_assoc($result);
 $firstname = $row['fname'];
-$lastname = $row['lname'];
+$lastname  = $row['lname'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,9 @@ $lastname = $row['lname'];
     <title>FlexFlow</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets\flexflow.css?d=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="assets\flexflow.css?d=<?php
+echo time();
+?>">
     <style>
         body {
             background-image: url('assets/flexflow3.png');
@@ -62,12 +64,18 @@ $lastname = $row['lname'];
         <button class="menu-bt">☰</button>
     </header>
 
-    <form action="db_dml.php?id=<?php echo $id ?>" method="POST">
+    <form action="db_dml.php?id=<?php
+echo $id;
+?>" method="POST">
         <h2>Delete Data?</h2>
         <table class="card ctn">
             <tr>
                 <td>Are you sure you want to <b>permanently</b> delete the data
-                    of <?php echo $firstname ?> <?php echo $lastname ?>?</td>
+                    of <?php
+echo $firstname;
+?> <?php
+echo $lastname;
+?>?</td>
             </tr>
             <tr>
                 <td></td>
